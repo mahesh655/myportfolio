@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahesh Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="mypic1.jpg" alt="Your Photo" class="profile-pic" onclick="showContent('about')"> 
+            <h1 onclick="showContent('about')">Mahesh Paudel</h1>
+            <div class="bio"></div>
+            <div class="buttons">
+                <button onclick="toggleContent('certifications')">Certifications</button>
+                <button onclick="toggleContent('projects')">Projects</button>
+                <button onclick="toggleContent('ideas')">Ideas</button>
+                <button onclick="toggleContent('experiences')">Experiences</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="about" class="content-section show">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/maheshpaudel/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn Profile" class="linkedin-icon">
+                    </a>
+                </div>
+                <p>Hello! I'm <strong>Mahesh Paudel</strong>, a passionate and detail-oriented Data Analyst with a Bachelor's degree in Information Technology. My journey in the world of data analytics began during my academic years, where I honed my skills in data analysis tools such as Excel, Power BI, SQL, and Python. Today, I am dedicated to transforming complex data into actionable insights and driving strategic decisions.</p>
+                <p>Currently, I am an IT Support Helpdesk professional at Dibtech Business Solution in Liverpool, NSW. In my role, I manage customer inquiries, provide technical support, and oversee Active Directory and Office 365 accounts. My problem-solving skills and technical expertise have enabled me to resolve issues efficiently and enhance customer satisfaction.</p>
+                <p>My proficiency includes:</p>
+                <ul>
+                    <li><strong>Data Analysis</strong>: Extracting, cleaning, and analyzing data to uncover patterns and trends.</li>
+                    <li><strong>Data Visualization</strong>: Creating intuitive and interactive dashboards using Power BI and Excel to present data insights.</li>
+                    <li><strong>Predictive Modelling</strong>: Utilizing statistical methods and machine learning techniques to forecast trends and behaviors.</li>
+                    <li><strong>SQL</strong>: Designing and executing complex queries to manage and manipulate data.</li>
+                    <li><strong>Project Management</strong>: Leading projects from conception through execution, ensuring timely and successful delivery.</li>
+                </ul>
+                <p>I thrive on challenges and continuously seek opportunities to learn and grow. My analytical mindset and attention to detail allow me to tackle intricate data problems and provide solutions that drive business success.</p>
+                <p>My professional goal is to leverage my analytical skills to make data-driven decisions that optimize business performance. I am eager to take on new challenges and collaborate on innovative projects. If you are looking for a dedicated and skilled Data Analyst to join your team or collaborate on a project, let's connect!</p>
+            </div>
+            <div id="certifications" class="content-section">
+                <div class="section-header">
+                    <h1>Certifications</h1>
+                    <button class="back-button" onclick="showContent('about')">Back</button>
+                </div>
+                <p>List of certifications...</p>
+            </div>
+            <div id="projects" class="content-section">
+                <div class="section-header">
+                    <h1>Projects</h1>
+                    <button class="back-button" onclick="showContent('about')">Back</button>
+                </div>
+                <p>List of projects...</p>
+            </div>
+            <div id="ideas" class="content-section">
+                <div class="section-header">
+                    <h1>Ideas</h1>
+                    <button class="back-button" onclick="showContent('about')">Back</button>
+                </div>
+                <p>List of ideas...</p>
+            </div>
+            <div id="experiences" class="content-section">
+                <div class="section-header">
+                    <h1>Experiences</h1>
+                    <button class="back-button" onclick="showContent('about')">Back</button>
+                </div>
+                <p>List of experiences...</p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
