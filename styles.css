@@ -23,18 +23,25 @@ body {
     text-align: center;
     overflow-y: auto;
     transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar.collapsed {
     width: 60px; /* Collapsed width */
     display: flex;
-    flex-direction: row; /* Align items horizontally */
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Add space between items */
+}
+
+.sidebar.collapsed .profile-pic,
+.sidebar.collapsed .bio,
+.sidebar.collapsed .buttons {
+    display: none; /* Hide elements when collapsed */
 }
 
 .toggle-btn {
-    display: none; /* Hide by default */
     background-color: #87CEEB;
     color: #fff;
     border: none;
@@ -42,6 +49,7 @@ body {
     cursor: pointer;
     padding: 10px;
     transition: background-color 0.3s;
+    margin-top: 20px; /* Add margin-top to position the toggle button below the buttons */
 }
 
 .toggle-btn:hover {
@@ -57,11 +65,8 @@ body {
     }
     .sidebar.collapsed {
         width: 100%; /* Full width for collapsed sidebar on mobile */
-        height: 60px; /* Height for horizontal collapsed sidebar */
-        flex-direction: row; /* Align items horizontally */
-    }
-    .sidebar.collapsed .toggle-btn {
-        margin-bottom: 0; /* Remove bottom margin in horizontal view */
+        height: auto; /* Adjust height for horizontal collapsed sidebar */
+        flex-direction: column; /* Keep items in column */
     }
     .profile-pic {
         width: 40px; /* Adjust profile picture size */
@@ -70,7 +75,16 @@ body {
         font-size: 1rem; /* Adjust font size */
     }
     .bio, .buttons {
-        display: none; /* Hide bio and buttons in collapsed mode */
+        display: flex; /* Display bio and buttons when not collapsed */
+        flex-direction: column;
+        align-items: center;
+    }
+    .bio {
+        display: block; /* Ensure bio is displayed */
+    }
+    .buttons {
+        display: flex; /* Ensure buttons are displayed */
+        flex-direction: column;
     }
 }
 
@@ -104,6 +118,7 @@ h1 {
 
 .buttons {
     margin-top: 20px;
+    width: 100%; /* Ensure buttons take full width */
 }
 
 .buttons button {

@@ -9,7 +9,6 @@
 <body>
     <div class="container">
         <div class="sidebar" id="sidebar">
-            <button class="toggle-btn" onclick="toggleSidebar()">☰</button> <!-- Sidebar toggle button -->
             <img src="mypic2.jpg" alt="Your Photo" class="profile-pic" onclick="showContent('about')"> 
             <h1 onclick="showContent('about')">Mahesh Paudel</h1>
             <div class="bio">
@@ -21,6 +20,7 @@
                 <button onclick="loadContent('ideas.html')">Ideas</button>
                 <button onclick="loadContent('experiences.html')">Experiences</button>
             </div>
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         </div>
         <div class="main-content">
             <div id="about" class="content-section show">
