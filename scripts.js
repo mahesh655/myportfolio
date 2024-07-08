@@ -1,27 +1,29 @@
-function showContent(sectionId) {
-    hideAllSections();
-    document.getElementById(sectionId).classList.add('show');
-}
-
-function toggleContent(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section.classList.contains('show')) {
-        section.classList.remove('show');
-        document.getElementById('about').classList.add('show');
-    } else {
-        hideAllSections();
-        section.classList.add('show');
-    }
-}
-
-function hideAllSections() {
+function showContent(section) {
     const sections = document.querySelectorAll('.content-section');
-    sections.forEach(section => {
-        section.classList.remove('show');
-    });
+    sections.forEach(sec => sec.classList.remove('show'));
+    document.getElementById(section).classList.add('show');
 }
 
-// Initially show the About Me section
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('about').classList.add('show');
-});
+function loadContent(file) {
+    fetch(file)
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.main-content').innerHTML = data;
+            showContent('dynamic-content');
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
+
+function loadProjectDetails(file) {
+    fetch(file)
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.main-content').innerHTML = data;
+            showContent('dynamic-content');
+        })
+        .catch(error => console.error('Error loading project details:', error));
+}
+
+function backToProjects() {
+    loadContent('projects.html');
+}
