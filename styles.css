@@ -11,7 +11,6 @@ body {
 .container {
     display: flex;
     height: 100vh;
-    margin: 10px; /* Added margin */
 }
 
 /* Sidebar styles */
@@ -28,10 +27,25 @@ body {
 
 .sidebar.collapsed {
     width: 60px; /* Collapsed width */
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+    justify-content: space-between; /* Add space between items */
 }
 
 .toggle-btn {
     display: none; /* Hide by default */
+    background-color: #87CEEB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #ADD8E6;
 }
 
 @media (max-width: 768px) {
@@ -39,7 +53,24 @@ body {
         display: block; /* Show toggle button on mobile */
     }
     .sidebar.collapsed .toggle-btn {
-        display: none; /* Hide toggle button when sidebar is collapsed */
+        display: block; /* Keep the toggle button when sidebar is collapsed */
+    }
+    .sidebar.collapsed {
+        width: 100%; /* Full width for collapsed sidebar on mobile */
+        height: 60px; /* Height for horizontal collapsed sidebar */
+        flex-direction: row; /* Align items horizontally */
+    }
+    .sidebar.collapsed .toggle-btn {
+        margin-bottom: 0; /* Remove bottom margin in horizontal view */
+    }
+    .profile-pic {
+        width: 40px; /* Adjust profile picture size */
+    }
+    h1 {
+        font-size: 1rem; /* Adjust font size */
+    }
+    .bio, .buttons {
+        display: none; /* Hide bio and buttons in collapsed mode */
     }
 }
 
