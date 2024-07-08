@@ -8,7 +8,8 @@ function loadContent(file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.getElementById('dynamic-content').innerHTML = data;
+            const dynamicContent = document.getElementById('dynamic-content');
+            dynamicContent.innerHTML = data;
             showContent('dynamic-content');
         })
         .catch(error => console.error('Error loading content:', error));
@@ -18,7 +19,8 @@ function loadProjectDetails(file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.getElementById('dynamic-content').innerHTML = data;
+            const dynamicContent = document.getElementById('dynamic-content');
+            dynamicContent.innerHTML = data;
             showContent('dynamic-content');
         })
         .catch(error => console.error('Error loading project details:', error));
@@ -26,4 +28,9 @@ function loadProjectDetails(file) {
 
 function backToProjects() {
     loadContent('projects.html');
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
 }
