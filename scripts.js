@@ -8,7 +8,7 @@ function loadContent(file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.querySelector('.main-content').innerHTML = data;
+            document.getElementById('dynamic-content').innerHTML = data;
             showContent('dynamic-content');
         })
         .catch(error => console.error('Error loading content:', error));
@@ -18,7 +18,7 @@ function loadProjectDetails(file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.querySelector('.main-content').innerHTML = data;
+            document.getElementById('dynamic-content').innerHTML = data;
             showContent('dynamic-content');
         })
         .catch(error => console.error('Error loading project details:', error));
