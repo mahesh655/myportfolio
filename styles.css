@@ -30,9 +30,6 @@ body {
 
 .sidebar.collapsed {
     width: 60px; /* Collapsed width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .sidebar.collapsed .profile-pic,
@@ -66,7 +63,7 @@ body {
     .sidebar.collapsed {
         width: 100%; /* Full width for collapsed sidebar on mobile */
         height: auto; /* Adjust height for horizontal collapsed sidebar */
-        flex-direction: column; /* Keep items in column */
+        flex-direction: column; /* Change items to row for horizontal view */
     }
     .profile-pic {
         width: 40px; /* Adjust profile picture size */
@@ -78,13 +75,6 @@ body {
         display: flex; /* Display bio and buttons when not collapsed */
         flex-direction: column;
         align-items: center;
-    }
-    .bio {
-        display: block; /* Ensure bio is displayed */
-    }
-    .buttons {
-        display: flex; /* Ensure buttons are displayed */
-        flex-direction: column;
     }
 }
 
