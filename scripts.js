@@ -21,12 +21,12 @@ function showContent(section) {
 }
 
 function loadContent(file) {
-    const sidebar = document.getElementById('sidebar');
     fetch(file)
         .then(response => response.text())
         .then(data => {
             document.getElementById('dynamic-content').innerHTML = data;
             showContent('dynamic-content');
+            const sidebar = document.getElementById('sidebar');
             if (window.innerWidth <= 768 && !sidebar.classList.contains('collapsed')) {
                 toggleSidebar();
             }
@@ -40,7 +40,8 @@ function loadProjectDetails(file) {
         .then(data => {
             document.getElementById('dynamic-content').innerHTML = data;
             showContent('dynamic-content');
-            if (window.innerWidth <= 768) {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 768 && !sidebar.classList.contains('collapsed')) {
                 toggleSidebar();
             }
         })
